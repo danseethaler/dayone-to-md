@@ -1,19 +1,22 @@
 {
     "name": "dayone-to-md",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Convert the DayOne JSON export to markdown files.",
     "bin": "bin/index.js",
     "scripts": {
         "build": "babel --out-dir bin --ignore *.test.js src",
-        "format":
-            "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.{js,json}'",
+        "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.{js,json}'",
         "test": "jest"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/danseethaler/dayone-to-md.git"
     },
-    "keywords": ["dayone", "journaling", "json"],
+    "keywords": [
+        "dayone",
+        "journaling",
+        "json"
+    ],
     "author": "Dan Seethaler <dan@seethalers.com> (https://danseethaler.com/)",
     "license": "MIT",
     "bugs": {
