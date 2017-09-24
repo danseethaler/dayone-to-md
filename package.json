@@ -1,0 +1,42 @@
+{
+    "name": "dayone-to-md",
+    "version": "0.0.1",
+    "description": "Convert the DayOne JSON export to markdown files.",
+    "bin": "bin/index.js",
+    "scripts": {
+        "build": "babel --out-dir bin --ignore *.test.js src",
+        "format":
+            "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.{js,json}'",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danseethaler/dayone-to-md.git"
+    },
+    "keywords": ["dayone", "journaling", "json"],
+    "author": "Dan Seethaler <dan@seethalers.com> (https://danseethaler.com/)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/danseethaler/dayone-to-md/issues"
+    },
+    "homepage": "https://github.com/danseethaler/dayone-to-md#readme",
+    "devDependencies": {
+        "eslint-config-airbnb": "^15.1.0",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-jsx-a11y": "^5.1.1",
+        "eslint-plugin-node": "^5.1.1",
+        "eslint-plugin-react": "^7.3.0",
+        "jest": "^21.1.0",
+        "prettier": "^1.7.0"
+    },
+    "dependencies": {
+        "adm-zip": "^0.4.7",
+        "commander": "^2.11.0",
+        "date-fns": "^1.28.5",
+        "eslint": "^4.7.2",
+        "mkdirp": "^0.5.1"
+    },
+    "engines": {
+        "node": ">=6.0.0"
+    }
+}
