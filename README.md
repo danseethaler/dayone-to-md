@@ -10,4 +10,4 @@ The DayOne app currently allows an export of entries to a JSON format. This pack
 
 ## Usage
 
-First add the output zip file from DayOne->Export to JSON into a folder titled `dayone` at the root of your project. Then add an npm script with the `dayone-to-md` bin i.e. `"scripts": {"convert": "dayone-to-md"}`. Now you can run `npm run convert`! The markdown files get output to `src/entries` and the photos are put in the `public/static` directory by default.
+First [make sure you have NPM installed](https://www.npmjs.com/package/dayone-to-md/tutorial), create a folder for this project, open command line interface there, install dayone-to-md with `npm install dayone-to-md` and initialize with `npm init`. Add the output zip file from _DayOne->Export to JSON_ into a folder titled `dayone` at the root of the project. Then add an npm script with the `dayone-to-md` bin i.e. `"scripts": {"convert": "dayone-to-md"}` to `package.json`. Now you can run `npm run convert`! The markdown files get output to `src/entries` and the photos are put in the `public/static` directory by default.
