@@ -5,7 +5,7 @@ module.exports.ensureDirectoriesExist = function(dirnames) {
     if (!Array.isArray(dirnames)) {
         dirnames = [dirnames]
     }
-    dirnames.forEach(function(dirname) {
+    dirnames.forEach(dirname => {
         if (fs.existsSync(dirname)) {
             return true
         }

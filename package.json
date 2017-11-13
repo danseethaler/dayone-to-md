@@ -37,7 +37,9 @@
         "commander": "^2.11.0",
         "date-fns": "^1.28.5",
         "eslint": "^4.7.2",
-        "mkdirp": "^0.5.1"
+        "mkdirp": "^0.5.1",
+        "moment": "^2.19.2",
+        "sanitize-filename": "^1.6.1"
     },
     "engines": {
         "node": ">=6.0.0"

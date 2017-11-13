@@ -2,6 +2,8 @@ const path = require('path')
 const fs = require('fs')
 const AdmZip = require('adm-zip')
 const formatDate = require('date-fns').format
+const moment = require('moment')
+var sanitize = require('sanitize-filename')
 const { ensureDirectoriesExist } = require('./utils')
 
 getDayoneFolderPath()
@@ -17,7 +19,6 @@ function getDayoneFolderPath() {
 
         fs.stat(dayonePath, (err, stat) => {
             if (err || !stat.isDirectory()) {
-                console.log('stat.isDirectory()', stat.isDirectory())
                 return reject('No `dayone` folder found.`')
             }
             return res(dayonePath)
@@ -85,7 +86,7 @@ function unpackDayone(zipDirectories) {
     console.log(`${entriesProcess} entries processed!`)
 }
 
-function entryToMarkdown(entry, index, _allEntries) {
+function entryToMarkdown(entry) {
     let title = entry.text.slice(0, entry.text.indexOf('\n')).trim()
     let text = entry.text.slice(entry.text.indexOf('\n')).trim()
 
@@ -113,8 +114,10 @@ function entryToMarkdown(entry, index, _allEntries) {
 }
 
 function saveEntries(entries, location) {
-    entries.map(({ md, id }) => {
-        var saveTo = path.join(location, `${id}.md`)
+    entries.map(({ md, date, title }) => {
+        const fileDate = moment(date, 'D MMM, YYYY').format('YYYY-MM-DD')
+        const fileName = sanitize(title)
+        var saveTo = path.join(location, `${fileDate} - ${fileName}.md`)
         fs.writeFileSync(saveTo, md, {
             encoding: 'utf8'
         })
