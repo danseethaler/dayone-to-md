@@ -1,6 +1,6 @@
 {
     "name": "dayone-to-md",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Convert the DayOne JSON export to markdown files.",
     "bin": "bin/index.js",
     "scripts": {
